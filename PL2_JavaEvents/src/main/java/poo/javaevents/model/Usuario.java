@@ -5,6 +5,10 @@
 
 package poo.javaevents.model;
 
+/**
+ *
+ * @author Blocky
+ */
 public abstract class Usuario {
     
     private String nombre;

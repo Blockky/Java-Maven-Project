@@ -5,6 +5,10 @@
 
 package poo.javaevents.model;
 
+/**
+ *
+ * @author Blocky
+ */
 public class Direccion {
 
     private String calle;

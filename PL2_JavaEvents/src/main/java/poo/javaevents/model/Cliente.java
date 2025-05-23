@@ -5,6 +5,10 @@
 
 package poo.javaevents.model;
 
+/**
+ *
+ * @author Blocky
+ */
 public class Cliente extends Usuario {
 
     private int telefono;

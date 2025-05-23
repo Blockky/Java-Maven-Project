@@ -7,6 +7,10 @@ package poo.javaevents.model;
 
 import java.time.LocalDate;
 
+/**
+ *
+ * @author Blocky
+ */
 public class TarjetaDeCredito {
 
     private String titular;
