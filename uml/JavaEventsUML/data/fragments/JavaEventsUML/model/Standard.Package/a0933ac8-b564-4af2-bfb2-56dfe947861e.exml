@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Diagrama de casos de uso" version="4">
+  <OBJECT>
+    <ID name="Diagrama de casos de uso" mc="Standard.Package" uid="a0933ac8-b564-4af2-bfb2-56dfe947861e"/>
+    <PID name="pl2_javaevents" mc="Standard.Package" uid="7f808df7-ddba-47fb-b88f-a0606eddcff5"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Diagrama de casos de uso]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Administrador" mc="Standard.Actor" uid="c5cd79a7-f156-4226-b19a-b0774ec0ccf8"/>
+        <COMPID name="Cliente" mc="Standard.Actor" uid="8395ea0c-d27a-4298-832b-b968a1c2e034"/>
+        <COMPID name="Gestionar eventos" mc="Standard.UseCase" uid="34ca8bbd-c609-4ec5-a7ea-ac72846478cd"/>
+        <COMPID name="Consultar eventos" mc="Standard.UseCase" uid="b8e9d332-d44b-4475-9905-12646c3aa531"/>
+        <COMPID name="Consultar usuarios" mc="Standard.UseCase" uid="95f02202-a1e5-4f65-8841-b7ef8dd64246"/>
+        <COMPID name="Consultar reservas" mc="Standard.UseCase" uid="bb8df84e-1ece-4522-ab83-77b241c20b2d"/>
+        <COMPID name="Iniciar sesión (admin)" mc="Standard.UseCase" uid="28d0644f-1373-4406-b148-62fec3c1ce10"/>
+        <COMPID name="Reservar entradas" mc="Standard.UseCase" uid="be1d54e6-ea28-4173-9367-dca434a0dc18"/>
+        <COMPID name="Buscar eventos" mc="Standard.UseCase" uid="fb870ae8-3413-4b20-aacf-ab318caee0cb"/>
+        <COMPID name="Añadir reseña" mc="Standard.UseCase" uid="579c1e2b-4fe2-44d1-b262-c543f6620653"/>
+        <COMPID name="Consultar reserva" mc="Standard.UseCase" uid="5dd21ecf-f543-4072-8eb9-c1d30ac518dd"/>
+        <COMPID name="Modificar datos" mc="Standard.UseCase" uid="8a7fddcf-cf8c-4518-89aa-765b5e523688"/>
+        <COMPID name="Iniciar sesión (usuario)" mc="Standard.UseCase" uid="140a638e-a742-43c6-87dc-14dca5b17b64"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagrama de casos de uso" mc="Standard.UseCaseDiagram" uid="5ebfbc75-161f-4be6-9ba4-8886b1a95ff0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

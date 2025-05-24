@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="time" version="4">
+  <OBJECT>
+    <ID name="time" mc="Standard.Package" uid="7af3a698-e1ad-4e39-a541-fbf6068f7ac6"/>
+    <PID name="java" mc="Standard.Package" uid="2e903388-ba00-4061-8867-7625fb6f310d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[time]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="LocalDate" mc="Standard.Class" uid="ab892fac-3a0f-4ffa-af24-f27bd603e622"/>
+        <COMPID name="LocalDateTime" mc="Standard.Class" uid="70bd20e8-5bb3-45bd-94cf-6e1bb68e2d99"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
