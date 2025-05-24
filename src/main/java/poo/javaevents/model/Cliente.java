@@ -16,6 +16,13 @@ public class Cliente extends Usuario {
     private TarjetaDeCredito tarjeta;
     private boolean vip;
 
+    public Cliente(int telefono, Direccion direccin, TarjetaDeCredito tarjeta, boolean vip) {
+        this.telefono = telefono;
+        this.direccin = direccin;
+        this.tarjeta = tarjeta;
+        this.vip = vip;
+    }
+                
     /**
      * Get the value of vip
      *
@@ -87,6 +94,5 @@ public class Cliente extends Usuario {
      */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
-    }
-
+    }               
 }
