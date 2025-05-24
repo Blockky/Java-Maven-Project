@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"poo.javaevents.model","l":"Cliente"},{"p":"poo.javaevents.model","l":"Direccion"},{"p":"poo.javaevents.model","l":"NewMain"},{"p":"poo.javaevents.view","l":"swing"},{"p":"poo.javaevents.model","l":"TarjetaDeCredito"},{"p":"poo.javaevents.model","l":"Usuario"}];updateSearchResults();
