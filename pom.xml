@@ -10,4 +10,36 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>poo.javaevents.main</exec.mainClass>
     </properties>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <id>run-javadoc-directo</id>
+              <phase>none</phase>
+              <goals>
+                <goal>exec</goal>
+              </goals>
+              <configuration>
+                <executable>javadoc</executable>
+                <arguments>
+                  <argument>-d</argument>
+                  <argument>docs/javadoc</argument>
+                  <argument>-sourcepath</argument>
+                  <argument>src/main/java</argument>
+                  <argument>-subpackages</argument>
+                  <argument>poo</argument>
+                  <argument>-public</argument>
+                  <argument>-author</argument>
+                  <argument>-version</argument>
+                </arguments>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
 </project>

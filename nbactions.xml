@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Generate Javadoc in docs</actionName>
+            <displayName>Generate Javadoc in docs</displayName>
+            <goals>
+                <goal>exec:exec@run-javadoc-directo</goal>
+            </goals>
+        </action>
+    </actions>
