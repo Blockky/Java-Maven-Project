@@ -8,8 +8,8 @@ package poo.javaevents.model;
  *
  * @author Blocky
  */
-public class NewMain {
-
+public class JavaEventsApp {
+    
     /**
      * @param args the command line arguments
      */

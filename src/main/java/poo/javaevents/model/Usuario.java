@@ -14,6 +14,15 @@ public abstract class Usuario {
     private String nombre;
     private String correo;
     private String clave;
+    /**
+     *
+     * Contructor Usuario
+     */
+    public Usuario(String nombre, String correo, String clave) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.clave = clave;
+    }
 
     /**
      * Get the value of clave

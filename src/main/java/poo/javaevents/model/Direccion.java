@@ -15,7 +15,17 @@ public class Direccion {
     private int numero;
     private String ciudad;
     private int codigoPostal;
-
+    /**
+     *
+     * Constructor Direccion
+     */
+    public Direccion(String calle, int numero, String ciudad, int codigoPostal) {
+        this.calle = calle;
+        this.numero = numero;
+        this.ciudad = ciudad;
+        this.codigoPostal = codigoPostal;
+    }
+    
     /**
      * Get the value of codigoPostal
      *

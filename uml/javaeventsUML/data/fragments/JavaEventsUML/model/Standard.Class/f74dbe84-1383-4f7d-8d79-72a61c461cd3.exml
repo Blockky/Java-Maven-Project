@@ -151,7 +151,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="precioDeLaEntrada" mc="Standard.Attribute" uid="7c55dd23-4253-4265-bde8-82d1370ab7a7"/>
+          <ID name="precioEntrada" mc="Standard.Attribute" uid="7c55dd23-4253-4265-bde8-82d1370ab7a7"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -165,7 +165,7 @@
             <ATT name="Visibility">Private</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[precioDeLaEntrada]]></ATT>
+            <ATT name="Name"><![CDATA[precioEntrada]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -215,7 +215,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="calificacion" mc="Standard.Attribute" uid="871ad0d6-d603-4e79-8e4b-ebd2d7b0e3ca"/>
+          <ID name="valoracion" mc="Standard.Attribute" uid="871ad0d6-d603-4e79-8e4b-ebd2d7b0e3ca"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
@@ -229,7 +229,7 @@
             <ATT name="Visibility">Private</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[calificacion]]></ATT>
+            <ATT name="Name"><![CDATA[valoracion]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>

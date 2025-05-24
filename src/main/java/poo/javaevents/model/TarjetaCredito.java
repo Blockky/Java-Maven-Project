@@ -11,7 +11,7 @@ import java.time.LocalDate;
  *
  * @author Blocky
  */
-public class TarjetaDeCredito {
+public class TarjetaCredito {
 
     private String titular;
     private int numero;

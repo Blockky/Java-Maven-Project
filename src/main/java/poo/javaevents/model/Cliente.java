@@ -13,10 +13,14 @@ public class Cliente extends Usuario {
 
     private int telefono;
     private Direccion direccin;
-    private TarjetaDeCredito tarjeta;
+    private TarjetaCredito tarjeta;
     private boolean vip;
-
-    public Cliente(int telefono, Direccion direccin, TarjetaDeCredito tarjeta, boolean vip) {
+    /**
+     *
+     * Constructor Cliente
+     */
+    public Cliente(String nombre, String correo, String clave, int telefono, Direccion direccin, TarjetaCredito tarjeta, boolean vip) {
+        super(nombre, correo, clave);
         this.telefono = telefono;
         this.direccin = direccin;
         this.tarjeta = tarjeta;
@@ -47,7 +51,7 @@ public class Cliente extends Usuario {
      *
      * @return the value of tarjeta
      */
-    public TarjetaDeCredito getTarjeta() {
+    public TarjetaCredito getTarjeta() {
         return tarjeta;
     }
 
@@ -56,7 +60,7 @@ public class Cliente extends Usuario {
      *
      * @param tarjeta new value of tarjeta
      */
-    public void setTarjeta(TarjetaDeCredito tarjeta) {
+    public void setTarjeta(TarjetaCredito tarjeta) {
         this.tarjeta = tarjeta;
     }
 
