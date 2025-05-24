@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Diagrama de clases" version="4">
+  <OBJECT>
+    <ID name="Diagrama de clases" mc="Standard.Package" uid="deedddee-31c9-475b-8b85-75646817faf1"/>
+    <PID name="pl2_javaevents" mc="Standard.Package" uid="7f808df7-ddba-47fb-b88f-a0606eddcff5"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Diagrama de clases]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Evento" mc="Standard.Class" uid="f74dbe84-1383-4f7d-8d79-72a61c461cd3"/>
+        <COMPID name="Direccion" mc="Standard.Class" uid="19f309d3-f761-4a02-9ff9-e399ae52e9b4"/>
+        <COMPID name="Cliente" mc="Standard.Class" uid="2e6b2b1b-ce77-4da8-8d20-55f3dc51c63f"/>
+        <COMPID name="TarjetaDeCredito" mc="Standard.Class" uid="2e3dce94-f84a-4851-ae55-5ba4370e08d8"/>
+        <COMPID name="Administrador" mc="Standard.Class" uid="eeedd8d4-1729-403a-ae2c-2862d9559de4"/>
+        <COMPID name="Usuario" mc="Standard.Class" uid="ce729078-966a-476e-9a42-a9bd6ffdbccd"/>
+        <COMPID name="Reserva" mc="Standard.Class" uid="345b1213-c5cd-463d-9080-b42990151a2e"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagrama de clases" mc="Standard.ClassDiagram" uid="1530fbd2-7477-4f93-94be-ed2876411e9b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
