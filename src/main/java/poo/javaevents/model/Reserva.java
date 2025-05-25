@@ -21,10 +21,8 @@ public class Reserva implements Serializable {
         this.evento = evento;
         this.fechaReserva = LocalDateTime.now();
         this.numeroEntradas = numeroEntradas;
-        double precioEntrada = (evento.getPrecioEntrada() * numeroEntradas);
-        if (cliente.isVip()) {
-            this.precioTotal = precioEntrada*0.9;
-        }
+        double precioEntradas = evento.getPrecioEntrada() * numeroEntradas;
+        this.precioTotal = cliente.isVip() ? precioEntradas * 0.9 : precioEntradas;
     }
     
     /**

@@ -18,8 +18,10 @@ import java.util.List;
 public class GestionarReserva {
     private List<Reserva> reservas;
 
-    public GestionarReserva() {
-        reservas = GestionarDatos.cargarDatos("datos.dat");
+    public GestionarReserva(String fichero) {
+        List<Reserva> cargadas = GestionarDatos.cargarDatos(fichero);
+        this.reservas = (cargadas != null) ? cargadas : new ArrayList<>();
+        reservas = GestionarDatos.cargarDatos(fichero);
     }
 
     public void realizarReserva(Cliente cliente, Evento evento, int numeroEntradas) {
@@ -47,14 +49,14 @@ public class GestionarReserva {
     }
 
     private void generarFactura(Reserva r) {
-        String nombreArchivo = "factura_" + r.getCliente().getCorreo().replace("@", "_") + "_" +
+        String nombreArchivo = "facturas/factura_" + r.getCliente().getCorreo().replace("@", "_") + "_" +
                 r.getFechaReserva().toLocalDate() + ".txt";
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             writer.write("Factura JavaEvents\n");
             writer.write("Fecha: " + r.getFechaReserva() + "\n");
             writer.write("Cliente: " + r.getCliente().getNombre() + "\n");
             writer.write("Evento: " + r.getEvento().getTitulo() + "\n");
-            writer.write("Importe: " + r.getPrecioTotal() + "€\n");
+            writer.write("Importe: " + r.getPrecioTotal() + "Euros\n");
         } catch (IOException e) {
             System.err.println("Error generando factura");
             e.printStackTrace();

@@ -6,25 +6,25 @@
 package poo.javaevents.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 import java.time.LocalDateTime;
-
+import java.io.Serializable;
 /**
  *
  * @author Blocky
  */
-public class Evento {
+public class Evento implements Serializable {
 
     private String titulo;
     private String tipo;
-    private ArrayList<LocalDateTime> fechaHora;
+    private List<LocalDateTime> fechaHora;
     private double precioEntrada;
     private String portada;
     private double valoracion;
     private Direccion direccion;
 
-    public Evento(String titulo, String tipo, ArrayList<LocalDateTime> fechaHora,
-            double precioEntrada, String portada, Direccion direccion) {
+    public Evento(String titulo, String tipo, Direccion direccion, 
+            List<LocalDateTime> fechaHora, double precioEntrada, String portada) {
         this.titulo = titulo;
         this.tipo = tipo;
         this.fechaHora = fechaHora;
@@ -94,14 +94,14 @@ public class Evento {
      * Get the value of fechaHora
      * @return the value of fechaHora
      */
-    public ArrayList<LocalDateTime> getFechaHora() {
+    public List<LocalDateTime> getFechaHora() {
         return fechaHora;
     }
     /**
      * Set the value of fechaHora
      * @param fechaHora new value of fechaHora
      */
-    public void setFechaHora(ArrayList<LocalDateTime> fechaHora) {
+    public void setFechaHora(List<LocalDateTime> fechaHora) {
         this.fechaHora = fechaHora;
     }
     /**
