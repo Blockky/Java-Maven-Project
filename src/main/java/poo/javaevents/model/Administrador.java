@@ -5,16 +5,20 @@
 
 package poo.javaevents.model;
 /**
- *
  * @author Blocky
  */
 public class Administrador extends Usuario {
     /**
-     *
-     * Constructor Administrador
+    * @author Blocky
+    */
+    public static final String correo = "admin@javaevents.com";
+    public static final String clave = "admin";
+    
+    /**
+     * Constructor de la clase Administrador con los atributos especificados
      */
-    public Administrador(String nombre, String correo, String clave) {
-        super(nombre, correo, clave);
+    public Administrador() {
+        super("Administrador", correo, clave);
     }
 
 }
