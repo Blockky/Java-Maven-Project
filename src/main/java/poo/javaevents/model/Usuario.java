@@ -27,7 +27,7 @@ public abstract class Usuario implements Serializable {
         this.clave = clave;
     }
     
-    public boolean autenticar(String clave) {
+    public boolean iniciarSesion(String clave) {
         return this.clave.equals(clave);
     }
     

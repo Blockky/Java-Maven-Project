@@ -23,6 +23,17 @@ public class Evento {
     private double valoracion;
     private Direccion direccion;
 
+    public Evento(String titulo, String tipo, List<LocalDateTime> fechaHora,
+            double precioEntrada, String portada, Direccion direccion) {
+        this.titulo = titulo;
+        this.tipo = tipo;
+        this.fechaHora = fechaHora;
+        this.precioEntrada = precioEntrada;
+        this.portada = portada;
+        this.valoracion = 0.0;
+        this.direccion = direccion;
+    }
+
     /**
      * Get the value of direccion
      * @return the value of direccion

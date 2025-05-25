@@ -130,7 +130,7 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Type">
-              <ID name="LocalDateTime" mc="Standard.Class" uid="70bd20e8-5bb3-45bd-94cf-6e1bb68e2d99"/>
+              <ID name="List&lt;LocalDateTime&gt;" mc="Standard.Class" uid="133fb588-c3f6-49d4-ad72-42fa33d914f3"/>
             </LINK>
             <COMP relation="Descriptor">
               <OBJECT>

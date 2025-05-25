@@ -84,7 +84,7 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Type">
-              <ID name="LocalDate" mc="Standard.Class" uid="ab892fac-3a0f-4ffa-af24-f27bd603e622"/>
+              <ID name="LocalDateTime" mc="Standard.Class" uid="70bd20e8-5bb3-45bd-94cf-6e1bb68e2d99"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

@@ -13,17 +13,18 @@ import java.io.Serializable;
 public class Cliente extends Usuario implements Serializable {
     // atributos de la clase Cliente
     private int telefono;
-    private Direccion direccin;
+    private Direccion direccion;
     private TarjetaCredito tarjeta;
     private boolean vip;
     
     /**
      * Constructor de la clase Cliente
      */
-    public Cliente(String nombre, String correo, String clave, int telefono, Direccion direccin, TarjetaCredito tarjeta, boolean vip) {
+    public Cliente(String nombre, String correo, String clave, int telefono, 
+            Direccion direccion, TarjetaCredito tarjeta, boolean vip) {
         super(nombre, correo, clave);
         this.telefono = telefono;
-        this.direccin = direccin;
+        this.direccion = direccion;
         this.tarjeta = tarjeta;
         this.vip = vip;
     }
@@ -57,18 +58,18 @@ public class Cliente extends Usuario implements Serializable {
         this.tarjeta = tarjeta;
     }
     /**
-     * Get the value of direccin
-     * @return the value of direccin
+     * Get the value of direccion
+     * @return the value of direccion
      */
-    public Direccion getDireccin() {
-        return direccin;
+    public Direccion getDireccion() {
+        return direccion;
     }
     /**
-     * Set the value of direccin
-     * @param direccin new value of direccin
+     * Set the value of direccion
+     * @param direccion new value of direccion
      */
-    public void setDireccin(Direccion direccin) {
-        this.direccin = direccin;
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
     /**
      * Get the value of telefono
