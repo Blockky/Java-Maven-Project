@@ -51,10 +51,9 @@ public class Prueba {
                 100.0, "clasico.jpg");
 
         // Instancia de las utilidades de reservas, 
-        UtilReservas gestorReservas = new UtilReservas();
+        UtilReservas utilReserva = new UtilReservas();
         
-        
-        gestorReservas.realizarReserva(c1, e6, LocalDateTime.of(2025, 6, 12, 20, 0), 2);
-        gestorReservas.guardar();
+        utilReserva.realizarReserva(c1, e6, LocalDateTime.of(2025, 6, 12, 20, 0), 2);
+        utilReserva.guardar();
     }
 }

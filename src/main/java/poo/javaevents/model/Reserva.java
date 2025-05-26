@@ -26,6 +26,7 @@ public class Reserva implements Serializable {
         this.cliente = cliente;
         this.evento = evento;        
         this.fechaReserva = LocalDateTime.now();
+        this.fechaEvento = fechaSeleccionada;
         this.numeroEntradas = numeroEntradas;
         double precioTotal = evento.getPrecioEntrada() * numeroEntradas;
         if (cliente.isVip()) {  // Si el cliente es vip, se aplica un descuento al precio total

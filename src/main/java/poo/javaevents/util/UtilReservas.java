@@ -82,12 +82,13 @@ public class UtilReservas {
         String fechaEventoTxt = fechaEvento.format(formatoFechaTxt);
         String fechaFactura = fechaReserva.format(formatoFechaFactura);  
         String clienteFactura = r.getCliente().getCorreo().replace("@", "_");
-        String rutaFactura = "factura(" + clienteFactura + "_" + fechaFactura + ").txt";
         try {
-            File dir = new File("facturas");
+            String carpeta = "facturas";
+            File dir = new File(carpeta);
             if (!dir.exists()) {
                 dir.mkdir();
             }
+            String rutaFactura = carpeta + "/factura(" + clienteFactura + "_" + fechaFactura + ").txt";
             PrintWriter salida = new PrintWriter(new BufferedWriter(new FileWriter(rutaFactura)));
             salida.println("=============== Factura JavaEvents ===============\n");
             salida.println("Fecha de reserva: " + fechaReservaTxt + "\n");
@@ -96,6 +97,7 @@ public class UtilReservas {
             salida.println("Fecha del evento: " + fechaEventoTxt + "\n");
             salida.println("Importe: " + r.getPrecioTotal() + " €\n");
             salida.println("==================================================");
+            salida.close();
         } catch (IOException ioe) {
             System.out.println("Error de IO: " + ioe.getMessage());
         }
