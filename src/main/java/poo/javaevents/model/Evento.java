@@ -111,6 +111,6 @@ public class Evento implements Serializable {
     public String toString() {
         return "Evento{" + "titulo=" + titulo + ", tipo=" + tipo + ", fechaHora=" + fechaHora + 
                 ", precioEntrada=" + precioEntrada + ", portada=" + portada + ", valoracion=" + 
-                valoracion + ", direccion=" + direccion + '}';
+                valoracion + ", direccion=" + direccion.toString() + '}';
     }   
 }

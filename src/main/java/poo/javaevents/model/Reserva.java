@@ -98,4 +98,10 @@ public class Reserva implements Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public String toString() {
+        return "Reserva{" + "cliente=" + cliente + ", evento=" + evento + ", fechaEvento=" + fechaEvento + ", fechaReserva=" + fechaReserva + ", numeroEntradas=" + numeroEntradas + ", precioFinal=" + precioFinal + '}';
+    }
+    
 }

@@ -51,4 +51,9 @@ public class TarjetaCredito implements Serializable {
     public void setTitular(String titular) {
         this.titular = titular;
     }
+
+    @Override
+    public String toString() {
+        return "TarjetaCredito{" + "titular=" + titular + ", numero=" + numero + ", fechaCaducidad=" + fechaCaducidad + '}';
+    }
 }

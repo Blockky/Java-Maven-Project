@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package poo.javaevents.util;
 
 import poo.javaevents.model.*;
@@ -14,13 +10,11 @@ public class Prueba {
 
     /** @param args the command line arguments */
     public static void main(String[] args) {
-        // 1. Crear cliente
-        Cliente c1 = new Cliente("Belen", "ana@gmail.com", "1234", 666111222,
+        Cliente c1 = new Cliente("Belen", "ana@gmail.com", "1234", "666111222",
                 new Direccion("Gran Vía", 15, "Madrid", 28013),
                 new TarjetaCredito("Ana Gómez", "1234567812345678", YearMonth.of(2025, 6)),
                 true);
 
-        // 2. Crear eventos
         Evento e1 = new Evento("Concierto de Arde Bogotá", "Concierto",
                 new Direccion("Sol", 1, "Madrid", 28013),
                 List.of(LocalDateTime.of(2025, 6, 1, 21, 0)),
@@ -51,7 +45,6 @@ public class Prueba {
                 List.of(LocalDateTime.of(2025, 6, 12, 20, 0)),
                 100.0, "clasico.jpg");
 
-        // Instancia de las utilidades de reservas, 
         UtilReservas utilReserva = new UtilReservas();
         
         utilReserva.realizarReserva(c1, e1, LocalDateTime.of(2025, 6, 1, 21, 0), 1);

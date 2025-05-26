@@ -77,4 +77,9 @@ public class Direccion implements Serializable {
     public void setCalle(String calle) {
         this.calle = calle;
     }
+
+    @Override
+    public String toString() {
+        return "Direccion{" + "calle=" + calle + ", numero=" + numero + ", ciudad=" + ciudad + ", codigoPostal=" + codigoPostal + '}';
+    }
 }

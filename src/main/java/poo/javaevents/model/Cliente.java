@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Cliente extends Usuario implements Serializable {
     
     // Atributos
-    private int telefono;
+    private String telefono;
     private Direccion direccion;
     private TarjetaCredito tarjeta;
     private boolean vip;
@@ -19,7 +19,7 @@ public class Cliente extends Usuario implements Serializable {
      * @param direccion
      * @param tarjeta
      * @param vip */
-    public Cliente(String nombre, String correo, String clave, int telefono, 
+    public Cliente(String nombre, String correo, String clave, String telefono, 
             Direccion direccion, TarjetaCredito tarjeta, boolean vip) {
         super(nombre, correo, clave);
         this.telefono = telefono;
@@ -62,12 +62,17 @@ public class Cliente extends Usuario implements Serializable {
     }
     /** Get the value of telefono
      * @return the value of telefono */
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
     /** Set the value of telefono
      * @param telefono new value of telefono */
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }               
+    }     
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "telefono=" + telefono + ", direccion=" + direccion + ", tarjeta=" + tarjeta + ", vip=" + vip + '}';
+    }    
 }

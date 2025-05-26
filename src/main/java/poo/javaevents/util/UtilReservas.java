@@ -3,6 +3,8 @@ package poo.javaevents.util;
 import poo.javaevents.model.Reserva;
 import poo.javaevents.model.Cliente;
 import poo.javaevents.model.Evento;
+import poo.javaevents.model.Direccion;
+import poo.javaevents.model.TarjetaCredito;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,15 +16,16 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
 /** @author Pablo García Hernández 
  * Esta clase contiene las utilidades que se pueden hacer con las reservas */
 public class UtilReservas {
     private final List<Reserva> reservas;
+    private final String fichero = "reservas.dat";
 
     /** Constructor de la clase UtilReserva
      * * En cada instancia se carga la información de las reservas */
     public UtilReservas() {
-        String fichero = "reservas.dat";
         List<Reserva> cargadas = Serializador.cargarDatos(fichero);
         if (cargadas == null) {
             cargadas = new ArrayList<>();
@@ -30,7 +33,7 @@ public class UtilReservas {
         this.reservas = cargadas;
     }
 
-    /** Método para realizar una reserva
+    /** Realizar una nueva reserva
      * @param cliente
      * @param evento
      * @param fechaSeleccionada
@@ -45,36 +48,41 @@ public class UtilReservas {
             }
         }
     
-    /** Método para obtener la lista con las reservas hechas
+    /** Consular una lista con las reservas hechas
      * @return reservas */
-    public List<Reserva> getReservas() {
+    public List<Reserva> consultarReservas() {
         return reservas;
     }
     
-    /** Método para obtener la lista de reservas de un cliente específico
+    /** Consultar una lista con las reservas de un cliente específico
      * @param cliente
      * @return reservas */
     public List<Reserva> getReservasCliente(Cliente cliente) {
-        List<Reserva> result = new ArrayList<>();
+        List<Reserva> lista = new ArrayList<>();
         for (Reserva r : reservas) {
             if (r.getCliente().getCorreo().equals(cliente.getCorreo())) {
-                result.add(r);
+                lista.add(r);
             }
         }
-        return result;
+        return lista;
     }
 
-    /** Método para serializar y guardar los datos sobre las reservas */
+    /** Serializar y guardar los datos de las reservas */
     public void guardar() {
-        Serializador.guardarDatos(reservas, "reservas.dat");
+        Serializador.guardarDatos(reservas, fichero);
     }
 
-    /** Genera un archivo de texto de la factura de una reserva
+    /** Genera un factura de una reserva en archivo de texto
      * @param r
      * @throws java.io.IOException */
     public void generarFactura(Reserva r) throws IOException {
+        Evento e = r.getEvento();
+        Direccion de = r.getEvento().getDireccion();
+        Cliente c = r.getCliente();
+        Direccion dc = r.getCliente().getDireccion();
+        TarjetaCredito tc = r.getCliente().getTarjeta();
         // Formatos de las fechas escritas en la factura y en el nombre de la factura
-        DateTimeFormatter formatoFechaTxt = DateTimeFormatter.ofPattern("dd/MM/yyyy");        
+        DateTimeFormatter formatoFechaTxt = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm");        
         DateTimeFormatter formatoFechaFactura = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
         LocalDateTime fechaReserva = r.getFechaReserva();
         LocalDateTime fechaEvento = r.getFechaEvento();
@@ -90,13 +98,24 @@ public class UtilReservas {
             }
             String rutaFactura = carpeta + "/factura(" + clienteFactura + "_" + fechaFactura + ").txt";
             PrintWriter salida = new PrintWriter(new BufferedWriter(new FileWriter(rutaFactura)));
-            salida.println("=============== Factura JavaEvents ===============\n");
-            salida.println("Fecha de reserva: " + fechaReservaTxt + "\n");
-            salida.println("Cliente: " + r.getCliente().getNombre() + "\n");
-            salida.println("Evento: " + r.getEvento().getTitulo() + "\n");
-            salida.println("Fecha del evento: " + fechaEventoTxt + "\n");
+            salida.println("================ Factura JavaEvents ================\n");
+            salida.println("Fecha de la reserva: " + fechaReservaTxt + "\n");
+            salida.println("Datos del cliente:");
+            salida.println(" - Nombre: " + c.getNombre());
+            salida.println(" - Correo: " + c.getCorreo());
+            salida.println(" - Telf: " + c.getTelefono());
+            salida.println(" - Tarjeta de crédito: " + tc.getNumero());
+            salida.println(" - Dirección: Calle " + dc.getCalle() + ", " + String.valueOf(dc.getNumero()) + 
+                    ", " + dc.getCiudad() + ", " + String.valueOf(dc.getCodigoPostal()) + "\n");
+            salida.println("Datos del evento:");
+            salida.println(" - Título: " + e.getTitulo());
+            salida.println(" - Tipo: " + e.getTipo());
+            salida.println(" - Fecha: " + fechaEventoTxt);
+            salida.println(" - Dirección: Calle " + de.getCalle() + ", " + String.valueOf(de.getNumero()) + 
+                    ", " + de.getCiudad() + ", " + String.valueOf(de.getCodigoPostal()) + "\n");
+            salida.println(" - Valoración: " + String.valueOf(e.getValoracion()));
             salida.println("Importe: " + r.getPrecioTotal() + " €\n");
-            salida.println("==================================================");
+            salida.println("====================================================");
             salida.close();
         } catch (IOException ioe) {
             System.out.println("Error de IO: " + ioe.getMessage());
