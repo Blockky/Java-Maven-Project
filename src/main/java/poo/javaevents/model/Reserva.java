@@ -9,21 +9,30 @@ public class Reserva implements Serializable {
     // Atributos
     private Cliente cliente;
     private Evento evento;
+    private LocalDateTime fechaEvento;
     private LocalDateTime fechaReserva;
     private int numeroEntradas;
-    private double precioTotal;
+    private double precioFinal;
 
     /** Constructor
      * @param cliente
      * @param evento
+     * @param fechaSeleccionada
      * @param numeroEntradas */
-    public Reserva(Cliente cliente, Evento evento, int numeroEntradas) {
+    public Reserva(Cliente cliente, Evento evento, LocalDateTime fechaSeleccionada, int numeroEntradas) {
+        if (!evento.getFechaHora().contains(fechaSeleccionada)) {    // La fecha elegida debe de ser válida
+            throw new IllegalArgumentException("La fecha seleccionada no es válida para el evento");
+        }
         this.cliente = cliente;
-        this.evento = evento;
+        this.evento = evento;        
         this.fechaReserva = LocalDateTime.now();
         this.numeroEntradas = numeroEntradas;
-        double precioEntradas = evento.getPrecioEntrada() * numeroEntradas;
-        this.precioTotal = cliente.isVip() ? precioEntradas * 0.9 : precioEntradas;
+        double precioTotal = evento.getPrecioEntrada() * numeroEntradas;
+        if (cliente.isVip()) {  // Si el cliente es vip, se aplica un descuento al precio total
+            this.precioFinal = precioTotal * 0.9;
+        } else {
+            this.precioFinal = precioTotal;
+        }
     }
     
     // Getters y setters
@@ -31,12 +40,12 @@ public class Reserva implements Serializable {
     /** Get the value of precioTotal
      * @return the value of precioTotal */
     public double getPrecioTotal() {
-        return precioTotal;
+        return precioFinal;
     }
     /** Set the value of precioTotal
      * @param precioTotal new value of precioTotal */
     public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
+        this.precioFinal = precioTotal;
     }
     /** Get the value of numeroEntradas
      * @return the value of numeroEntradas */
@@ -47,6 +56,16 @@ public class Reserva implements Serializable {
      * @param numeroEntradas new value of numeroEntradas */
     public void setNumeroEntradas(int numeroEntradas) {
         this.numeroEntradas = numeroEntradas;
+    }
+    /** Get the value of fechaEvento
+     * @return the value of fechaEvento */
+    public LocalDateTime getFechaEvento() {
+        return fechaEvento;
+    }
+    /** Set the value of fechaEvento
+     * @param fechaEvento new value of fechaEvento */
+    public void setFechaEvento(LocalDateTime fechaEvento) {
+        this.fechaEvento = fechaEvento;
     }
     /** Get the value of fechaReserva
      * @return the value of fechaReserva */

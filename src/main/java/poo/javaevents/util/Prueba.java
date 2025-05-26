@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package poo.javaevents.tools;
+package poo.javaevents.util;
 
 import poo.javaevents.model.*;
 import java.util.*;
@@ -50,9 +50,11 @@ public class Prueba {
                 List.of(LocalDateTime.of(2025, 6, 12, 20, 0)),
                 100.0, "clasico.jpg");
 
-        // 3. Crear reservas
-        GestionarReserva gestorReservas = new GestionarReserva();
-        gestorReservas.realizarReserva(c1, e6, 2);
+        // Instancia de las utilidades de reservas, 
+        UtilReservas gestorReservas = new UtilReservas();
+        
+        
+        gestorReservas.realizarReserva(c1, e6, LocalDateTime.of(2025, 6, 12, 20, 0), 2);
         gestorReservas.guardar();
     }
 }

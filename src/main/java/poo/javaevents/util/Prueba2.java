@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 
-package poo.javaevents.tools;
+package poo.javaevents.util;
 
 import poo.javaevents.model.Reserva;
 
@@ -17,7 +17,7 @@ public class Prueba2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        GestionarReserva gestorReservas = new GestionarReserva();
+        UtilReservas gestorReservas = new UtilReservas();
         List<Reserva> listaReservas = gestorReservas.getReservas();
 
         for (Reserva r : listaReservas) {

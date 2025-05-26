@@ -1,4 +1,4 @@
-package poo.javaevents.tools;
+package poo.javaevents.util;
 
 import java.io.*;
 import java.util.List;
@@ -6,21 +6,22 @@ import java.util.ArrayList;
 import java.io.File;
 
 /** @author Blocky */
-public class GestionarDatos {
+public class Serializador {
     
-    /** Método para guardar datos serializados
+    /** Método para serializar y guardar datos en un fichero de datos
      * @param datos
      * @param nombreFichero */
     public static <E> void guardarDatos(List<E> datos, String nombreFichero) {
-        File dir = new File("resources");
+        File dir = new File("resources");   // Los datos se guardarán en /resources
         if (!dir.exists()) {
-            dir.mkdir();
+            dir.mkdir();    // Si la carpeta no existe, se crea
         }
         String rutaFichero = dir + "/" + nombreFichero;
         try {
             FileOutputStream outFileDatos = new FileOutputStream(rutaFichero);
             ObjectOutputStream outObjDatos = new ObjectOutputStream(outFileDatos);
             outObjDatos.writeObject(datos);
+            outFileDatos.close();
         } catch (IOException e) {
             System.err.println("Error guardando datos: " + rutaFichero);
         }
@@ -32,13 +33,12 @@ public class GestionarDatos {
      */
     public static <E> List<E> cargarDatos(String nombreFichero) {
         List<E> datos = new ArrayList<>();
-        File dir = new File("resources");
-        String rutaFichero = dir + "/" + nombreFichero;
+        String rutaFichero = "resources/" + nombreFichero;
         try {
-            FileInputStream inputDatos = new FileInputStream(rutaFichero);
-            ObjectInputStream objDatos = new ObjectInputStream(inputDatos);
-            datos = (List<E>) objDatos.readObject();
-            inputDatos.close();
+            FileInputStream inFileDatos = new FileInputStream(rutaFichero);
+            ObjectInputStream inObjDatos = new ObjectInputStream(inFileDatos);
+            datos = (List<E>) inObjDatos.readObject();
+            inFileDatos.close();
         } catch (IOException ioe) {
             System.out.println("Error de IO: " + ioe.getMessage());
         } catch (ClassNotFoundException cnfe) {
