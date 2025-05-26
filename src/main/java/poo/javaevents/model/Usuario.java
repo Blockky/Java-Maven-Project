@@ -2,7 +2,7 @@ package poo.javaevents.model;
 
 import java.io.Serializable;
 
-/** @author Blocky
+/** @author Pablo García Hernández
  * * Clase abstracta que contiene los atributos comúnes de todos los Usuarios de la App */
 public abstract class Usuario implements Serializable {
    

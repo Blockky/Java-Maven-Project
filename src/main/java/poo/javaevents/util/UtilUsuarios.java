@@ -1,6 +1,6 @@
 package poo.javaevents.util;
 
 /** @author Pablo García Hernández */
-public class UtilEventos {
+public class UtilUsuarios {
     
 }

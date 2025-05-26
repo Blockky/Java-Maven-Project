@@ -2,7 +2,7 @@ package poo.javaevents.model;
 
 import java.io.Serializable;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Direccion implements Serializable {
 
     // Atributos

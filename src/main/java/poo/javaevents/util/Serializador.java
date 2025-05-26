@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.File;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Serializador {
     
     /** Método para serializar y guardar datos en un fichero de datos

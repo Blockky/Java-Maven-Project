@@ -4,7 +4,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Evento implements Serializable {
     
     // Atributos
@@ -106,4 +106,11 @@ public class Evento implements Serializable {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    @Override
+    public String toString() {
+        return "Evento{" + "titulo=" + titulo + ", tipo=" + tipo + ", fechaHora=" + fechaHora + 
+                ", precioEntrada=" + precioEntrada + ", portada=" + portada + ", valoracion=" + 
+                valoracion + ", direccion=" + direccion + '}';
+    }   
 }

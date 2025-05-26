@@ -3,7 +3,7 @@ package poo.javaevents.model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Reserva implements Serializable {
 
     // Atributos

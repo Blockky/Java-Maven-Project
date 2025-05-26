@@ -1,3 +1,3 @@
 poo.javaevents.model
-poo.javaevents.tools
-poo.javaevents.view
+poo.javaevents.util
+poo.javaevents.view.interfaz.swing

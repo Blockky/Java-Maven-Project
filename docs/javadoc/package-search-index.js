@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"poo.javaevents.model"},{"l":"poo.javaevents.tools"},{"l":"poo.javaevents.view"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"poo.javaevents.model"},{"l":"poo.javaevents.util"},{"l":"poo.javaevents.view.interfaz.swing"}];updateSearchResults();

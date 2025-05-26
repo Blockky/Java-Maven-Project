@@ -9,7 +9,7 @@ import poo.javaevents.model.Reserva;
 
 import java.util.List;
 
-/** @author block */
+/** @author Pablo García Hernández */
 public class Prueba2 {
 
     /**

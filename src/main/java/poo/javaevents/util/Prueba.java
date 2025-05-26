@@ -5,10 +5,11 @@
 package poo.javaevents.util;
 
 import poo.javaevents.model.*;
+
 import java.util.*;
 import java.time.*;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Prueba {
 
     /** @param args the command line arguments */
@@ -17,7 +18,7 @@ public class Prueba {
         Cliente c1 = new Cliente("Belen", "ana@gmail.com", "1234", 666111222,
                 new Direccion("Gran Vía", 15, "Madrid", 28013),
                 new TarjetaCredito("Ana Gómez", "1234567812345678", YearMonth.of(2025, 6)),
-                false);
+                true);
 
         // 2. Crear eventos
         Evento e1 = new Evento("Concierto de Arde Bogotá", "Concierto",
@@ -53,7 +54,7 @@ public class Prueba {
         // Instancia de las utilidades de reservas, 
         UtilReservas utilReserva = new UtilReservas();
         
-        utilReserva.realizarReserva(c1, e6, LocalDateTime.of(2025, 6, 12, 20, 0), 2);
+        utilReserva.realizarReserva(c1, e1, LocalDateTime.of(2025, 6, 1, 21, 0), 1);
         utilReserva.guardar();
     }
 }

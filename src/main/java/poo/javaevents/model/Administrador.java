@@ -1,6 +1,6 @@
 package poo.javaevents.model;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class Administrador extends Usuario {
     
     // 

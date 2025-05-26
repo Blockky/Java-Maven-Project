@@ -14,7 +14,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/** @author Blocky 
+/** @author Pablo García Hernández 
  * Esta clase contiene las utilidades que se pueden hacer con las reservas */
 public class UtilReservas {
     private final List<Reserva> reservas;

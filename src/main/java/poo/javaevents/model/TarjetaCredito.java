@@ -3,7 +3,7 @@ package poo.javaevents.model;
 import java.time.YearMonth;
 import java.io.Serializable;
 
-/** @author Blocky */
+/** @author Pablo García Hernández */
 public class TarjetaCredito implements Serializable {
 
     // Atributos
