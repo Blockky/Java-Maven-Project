@@ -14,13 +14,10 @@ public class Prueba {
     /** @param args the command line arguments */
     public static void main(String[] args) {
         // 1. Crear cliente
-        Cliente c1 = new Cliente("Ana Gómez", "ana@gmail.com", "1234", 666111222,
+        Cliente c1 = new Cliente("Belen", "ana@gmail.com", "1234", 666111222,
                 new Direccion("Gran Vía", 15, "Madrid", 28013),
                 new TarjetaCredito("Ana Gómez", "1234567812345678", YearMonth.of(2025, 6)),
                 false);
-
-        List<Cliente> clientes = Arrays.asList(c1);
-        GestionarDatos.guardarDatos(clientes, "resources/clientes.dat");
 
         // 2. Crear eventos
         Evento e1 = new Evento("Concierto de Arde Bogotá", "Concierto",
@@ -53,14 +50,9 @@ public class Prueba {
                 List.of(LocalDateTime.of(2025, 6, 12, 20, 0)),
                 100.0, "clasico.jpg");
 
-        List<Evento> eventos = Arrays.asList(e1, e2, e3, e4, e5, e6);
-        GestionarDatos.guardarDatos(eventos, "resources/eventos.dat");
-
         // 3. Crear reservas
-        GestionarReserva gestorReservas = new GestionarReserva("resources/reservas.dat");
-        gestorReservas.realizarReserva(c1, e1, 5);
-        gestorReservas.guardar("resources/reservas.dat");
-
-        System.out.println("Datos de prueba generados correctamente.");
+        GestionarReserva gestorReservas = new GestionarReserva();
+        gestorReservas.realizarReserva(c1, e6, 2);
+        gestorReservas.guardar();
     }
 }

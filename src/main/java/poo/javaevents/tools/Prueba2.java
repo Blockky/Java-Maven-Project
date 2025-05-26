@@ -17,7 +17,7 @@ public class Prueba2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        GestionarReserva gestorReservas = new GestionarReserva("resources/reservas.dat");
+        GestionarReserva gestorReservas = new GestionarReserva();
         List<Reserva> listaReservas = gestorReservas.getReservas();
 
         for (Reserva r : listaReservas) {

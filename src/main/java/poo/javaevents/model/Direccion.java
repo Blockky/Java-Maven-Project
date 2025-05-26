@@ -1,24 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package poo.javaevents.model;
 
 import java.io.Serializable;
 
-/**
- * @author Blocky
- */
+/** @author Blocky */
 public class Direccion implements Serializable {
 
+    // Atributos
     private String calle;
     private int numero;
     private String ciudad;
     private int codigoPostal;
-    /**
-     * Constructor de la clase Direccion
-     */
+    
+    /** Constructor
+     * @param calle
+     * @param numero
+     * @param ciudad
+     * @param codigoPostal */
     public Direccion(String calle, int numero, String ciudad, int codigoPostal) {
         this.calle = calle;
         this.numero = numero;
@@ -26,17 +23,15 @@ public class Direccion implements Serializable {
         this.codigoPostal = codigoPostal;
     }
     
-    /**
-     * Get the value of codigoPostal
-     * @return the value of codigoPostal
-     */
+    // Getters y setters
+    
+    /** Get the value of codigoPostal
+     * @return the value of codigoPostal */
     public int getCodigoPostal() {
         return codigoPostal;
     }
-    /**
-     * Set the value of codigoPostal
-     * @param codigoPostal new value of codigoPostal
-     */
+    /** Set the value of codigoPostal
+     * @param codigoPostal new value of codigoPostal */
     public void setCodigoPostal(int codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
@@ -82,5 +77,4 @@ public class Direccion implements Serializable {
     public void setCalle(String calle) {
         this.calle = calle;
     }
-
 }

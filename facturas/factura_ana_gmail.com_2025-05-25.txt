@@ -1,5 +1,0 @@
-Factura JavaEvents
-Fecha: 2025-05-25T23:16:37.555958400
-Cliente: Ana Gómez
-Evento: Concierto de Arde Bogotá
-Importe: 200.0Euros
