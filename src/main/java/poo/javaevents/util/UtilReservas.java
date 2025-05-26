@@ -6,15 +6,13 @@ import poo.javaevents.model.Evento;
 import poo.javaevents.model.Direccion;
 import poo.javaevents.model.TarjetaCredito;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 
 /** @author Pablo García Hernández 
@@ -51,7 +49,7 @@ public class UtilReservas {
     /** Consular una lista con las reservas hechas
      * @return reservas */
     public List<Reserva> consultarReservas() {
-        return reservas;
+        return reservas.stream().sorted(Comparator.comparing(Reserva::getFechaReserva)).collect(Collectors.toList());
     }
     
     /** Consultar una lista con las reservas de un cliente específico

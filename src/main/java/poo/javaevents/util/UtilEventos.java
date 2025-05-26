@@ -1,6 +1,51 @@
 package poo.javaevents.util;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import poo.javaevents.model.Evento;
+
 /** @author Pablo García Hernández */
 public class UtilEventos {
+        private final List<Evento> eventos;
+        private final String fichero = "eventos.dat";
     
+    /** Constructor de la clase UtilEventos
+     * * En cada instancia se carga la información de los clientes */
+    public UtilEventos() {
+        List<Evento> cargados = Serializador.cargarDatos(fichero);
+        if (cargados == null) {
+            cargados = new ArrayList<>();
+        }
+        this.eventos = cargados;
+    }
+    
+    /** Consular una lista con los eventos
+     * @return reservas */
+    public List<Evento> consultarEventos() {
+        return eventos;
+    }
+    
+    /** Consultar una lista con los eventos de tipo especificado
+     * @param tipo
+     * @return reservas */
+    public List<Evento> filtrarTipo(String tipo) {
+        List<Evento> lista = eventos.stream().filter(e -> 
+                e.getTipo().equalsIgnoreCase(tipo)).collect(Collectors.toList());
+        return lista;
+    }
+    
+    /** Consultar una lista con los eventos que toman lugar en una ciudad especificada
+     * @param ciudad
+     * @return reservas */
+    public List<Evento> filtrarCiudad(String ciudad) {
+        List<Evento> lista = eventos.stream().filter(e -> 
+                e.getTipo().equalsIgnoreCase(ciudad)).collect(Collectors.toList());
+        return lista;
+    }
+    
+    /** Serializar y guardar los datos de los eventos */
+    public void guardar() {
+        Serializador.guardarDatos(eventos, fichero);
+    }
 }

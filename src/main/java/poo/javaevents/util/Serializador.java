@@ -3,7 +3,6 @@ package poo.javaevents.util;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
-import java.io.File;
 
 /** @author Pablo García Hernández */
 public class Serializador {
