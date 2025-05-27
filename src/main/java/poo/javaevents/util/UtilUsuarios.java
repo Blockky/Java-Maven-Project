@@ -85,16 +85,12 @@ public class UtilUsuarios {
      * @param c
      * @param clave
      * @param telefono
-     * @param direccion
-     * @param tarjeta
-     * @param vip */
+     * @param direccion */
     public void modificarDatos(Cliente c, String clave, String telefono, 
-            Direccion direccion, TarjetaCredito tarjeta, Boolean vip) {
-        if (clave != null) c.setClave(clave);
-        if (telefono != null) c.setTelefono(telefono);
+            Direccion direccion) {
+        if (!(clave=="")) c.setClave(clave);
+        if (!(telefono=="")) c.setTelefono(telefono);
         if (direccion != null) c.setDireccion(direccion);
-        if (tarjeta != null) c.setTarjeta(tarjeta);
-        if (vip != null) c.setVip(vip);
     }
     
     /** Serializar y guardar los datos de los clientes */
