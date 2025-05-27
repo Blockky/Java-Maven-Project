@@ -86,11 +86,16 @@ public class UtilUsuarios {
      * @param clave
      * @param telefono
      * @param direccion */
-    public void modificarDatos(Cliente c, String clave, String telefono, 
-            Direccion direccion) {
-        if (!(clave=="")) c.setClave(clave);
-        if (!(telefono=="")) c.setTelefono(telefono);
-        if (direccion != null) c.setDireccion(direccion);
+    public void modificarDatos(Cliente c, String clave, String telefono, Direccion direccion) {
+        if (clave != null && !clave.isEmpty()) {
+            c.setClave(clave);
+        }
+        if (telefono != null && !telefono.isEmpty()) {
+            c.setTelefono(telefono);
+        }
+        if (direccion != null) {
+            c.setDireccion(direccion);
+        }
     }
     
     /** Serializar y guardar los datos de los clientes */

@@ -246,28 +246,33 @@ public class ModificarDatos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            // Modificar
             String clave = jTextClave.getText();
             String telf = jTextTelf.getText();
             String calle = jTextCalle.getText();
             String ciudad = jTextCiudad.getText();
-            
-            if (calle == "" && jTextNumero.getText() == "" && ciudad == "" && jTextCP.getText() == ""){
-                utilUsers.modificarDatos(c, clave, telf, null);
-            }
-            int cp = Integer.parseInt(jTextCP.getText());
-            int numero = Integer.parseInt(jTextNumero.getText());
-            
-            // Configurar la dirección
-            Direccion dir = new Direccion(calle, numero, ciudad, cp);
+            String strNumero = jTextNumero.getText();
+            String strCP = jTextCP.getText();
 
-            // Cambiar datos
+            Direccion dir = null;
+
+            boolean direccionCompleta = 
+                !calle.isEmpty() && 
+                !strNumero.isEmpty() && 
+                !ciudad.isEmpty() && 
+                !strCP.isEmpty();
+
+            if (direccionCompleta) {
+                int numero = Integer.parseInt(strNumero);
+                int cp = Integer.parseInt(strCP);
+                dir = new Direccion(calle, numero, ciudad, cp);
+            }
+
             utilUsers.modificarDatos(c, clave, telf, dir);
             JOptionPane.showMessageDialog(this, "Datos cambiados con éxito", "Modificación hecha", 
                         JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en los datos: " + e.getMessage(), 
-                    "Error: ", JOptionPane.ERROR_MESSAGE);
+                "Error: ", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -6,7 +6,9 @@ import poo.javaevents.model.Administrador;
 /** @Pablo García Hernández
  */
 public class AccederAdmin extends javax.swing.JFrame {
-    private Administrador a;
+    
+    // admin
+    Administrador a = new Administrador();
 
     /**
      * Creates new form AccederAdmin

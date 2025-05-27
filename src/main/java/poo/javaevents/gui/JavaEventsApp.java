@@ -216,6 +216,8 @@ public class JavaEventsApp extends javax.swing.JFrame {
 
     private void jModoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModoAdminActionPerformed
         // Acceder como admin:
+        new AccederAdmin();
+        this.setVisible(false);
     }//GEN-LAST:event_jModoAdminActionPerformed
 
     private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
