@@ -1,7 +1,6 @@
 package poo.javaevents.gui;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import javax.swing.DefaultListModel;
 
 import poo.javaevents.model.Cliente;
@@ -20,6 +19,7 @@ public class BuscadorEventos extends javax.swing.JFrame {
 
     /**
      * Creates new form BuscadorEventos
+     * @param cliente
      */
     public BuscadorEventos(Cliente cliente) {
         c = cliente;
@@ -28,7 +28,6 @@ public class BuscadorEventos extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setTitle("Java Events - Catálogo de eventos");
-        jBuscarActionPerformed(null);
     }
 
     /**

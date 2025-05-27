@@ -1,22 +1,18 @@
 package poo.javaevents.gui;
 
 import java.util.List;
-import poo.javaevents.model.Cliente;
-import poo.javaevents.model.Evento;
 import poo.javaevents.model.Reserva;
-import poo.javaevents.util.UtilEventos;
+import javax.swing.DefaultListModel;
+import poo.javaevents.model.Cliente;
 import poo.javaevents.util.UtilReservas;
-import poo.javaevents.util.UtilUsuarios;
 
-/**
- *
- * @author block
- */
+
+/** @author Pablo García Hernández */
 public class ReservasCliente extends javax.swing.JFrame {
     private Cliente c;
-
-    UtilUsuarios utilUsers = new UtilUsuarios();
-    UtilEventos utilEventos = new UtilEventos();
+    private List<Reserva> listaReservas;
+    
+    // Utilidades
     UtilReservas utilReservas = new UtilReservas();
     
     /**
@@ -29,6 +25,14 @@ public class ReservasCliente extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setTitle("Java Events - Consulta de reservas");
+        
+        List <Reserva> lista = utilReservas.getReservasCliente(cliente);
+        DefaultListModel<String> modelo = new DefaultListModel<>();
+        for (Reserva r : lista) {
+            modelo.addElement("Reseva del evento: " + r.getEvento().getTitulo());
+        }
+        jList1.setModel(modelo);
+        listaReservas = lista;
     }
 
     /**
@@ -43,6 +47,7 @@ public class ReservasCliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,9 +56,22 @@ public class ReservasCliente extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Mis reservas");
+
+        jButton1.setText("Volver a inicio");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,35 +80,52 @@ public class ReservasCliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton1)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(17, 17, 17))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void actualizarListaEventos(List<Reserva> lista) {
-        javax.swing.DefaultListModel<String> modelo = new javax.swing.DefaultListModel<>();
-        for (Reserva r : lista) {
-            modelo.addElement(r.getEvento().getTitulo());
-        }
-        jList1.setModel(modelo);
-    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Volver al inicio
+        new ClienteView(c);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        // Si se pulsa dos veces a un elemento de la lista, se muestran sus detalles
+        if (evt.getClickCount() == 2) {
+            int index = jList1.locationToIndex(evt.getPoint());
+            if (index >= 0 && index < listaReservas.size()) {
+                    Reserva seleccionada = listaReservas.get(index);
+                    new DetallesReserva(seleccionada, c);
+                    this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jList1MouseClicked
+
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;

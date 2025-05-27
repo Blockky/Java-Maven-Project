@@ -9,8 +9,7 @@ import poo.javaevents.util.UtilUsuarios;
 
 /** @author Pablo García Hernández */
 public class RegistroView extends javax.swing.JFrame {
-    private JavaEventsApp ventana;
-    
+
     //Utilidades
     UtilUsuarios utilUsers = new UtilUsuarios();
     
