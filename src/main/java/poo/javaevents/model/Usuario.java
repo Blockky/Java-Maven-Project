@@ -21,13 +21,6 @@ public abstract class Usuario implements Serializable {
         this.clave = clave;
     }
     
-    /** Método con el que un usuario inicia sesión
-    * @param clave
-    * @return booleano que indica si la sesión está iniciada */
-    public boolean iniciarSesion(String clave) {
-        return this.clave.equals(clave);
-    }
-    
     // Getters y setters
     
     /** Get the value of clave

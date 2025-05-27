@@ -110,8 +110,8 @@ public class UtilReservas {
             salida.println(" - Tipo: " + e.getTipo());
             salida.println(" - Fecha: " + fechaEventoTxt);
             salida.println(" - Dirección: Calle " + de.getCalle() + ", " + String.valueOf(de.getNumero()) + 
-                    ", " + de.getCiudad() + ", " + String.valueOf(de.getCodigoPostal()) + "\n");
-            salida.println(" - Valoración: " + String.valueOf(e.getValoracion()));
+                    ", " + de.getCiudad() + ", " + String.valueOf(de.getCodigoPostal()));
+            salida.println(" - Valoración: " + String.valueOf(e.getValoracion()) + "\n");
             salida.println("Importe: " + r.getPrecioTotal() + " €\n");
             salida.println("====================================================");
             salida.close();

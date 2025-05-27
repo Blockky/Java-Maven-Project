@@ -22,6 +22,17 @@ public class UtilUsuarios {
         this.clientes = cargados;
     }
     
+    /** Iniciar sesion de un cliente
+     * @param correo
+     * @param clave
+     * @return boolean */
+    public boolean iniciarSesion(String correo, String clave) {
+        Cliente c = clientes.stream()
+                .filter(cliente -> cliente.getCorreo().equalsIgnoreCase(correo)).
+                        findFirst().orElse(null);
+        return (c != null && c.getClave().equals(clave));
+    }
+    
     /** Registrar un nuevo cliente
      * @param nombre
      * @param correo
@@ -29,11 +40,31 @@ public class UtilUsuarios {
      * @param telefono
      * @param direccion
      * @param tarjeta
-     * @param vip */
-    public void registrar(String nombre, String correo, String clave, String telefono, 
+     * @param vip
+     * @return boolean */
+    public boolean registrar(String nombre, String correo, String clave, String telefono, 
             Direccion direccion, TarjetaCredito tarjeta, boolean vip) {
-        Cliente c = new Cliente(nombre, correo, clave, telefono, direccion, tarjeta, vip);
-        clientes.add(c);
+        boolean existe = clientes.stream().anyMatch(c -> c.getCorreo().equalsIgnoreCase(correo));
+        if (existe) {
+            return false;
+        } else {
+            Cliente c = new Cliente(nombre, correo, clave, telefono, direccion, tarjeta, vip);
+            clientes.add(c);
+            return true;
+        }
+    }
+    
+    public Cliente obtenerClaseCliente(String correo) {
+        boolean existe = clientes.stream().anyMatch(c -> c.getCorreo().equalsIgnoreCase(correo));
+        if (existe) {
+            return clientes.stream()
+            .filter(c -> c.getCorreo().equalsIgnoreCase(correo))
+            .findFirst()
+            .orElse(null);
+        }
+        else {
+            return null;
+        }
     }
     
     /** Consultar los clientes que hay registrados
@@ -42,6 +73,13 @@ public class UtilUsuarios {
         return clientes;
     }
     
+    /** Modificar los datos de un cliente
+     * @param c
+     * @param clave
+     * @param telefono
+     * @param direccion
+     * @param tarjeta
+     * @param vip */
     public void modificarDatos(Cliente c, String clave, String telefono, 
             Direccion direccion, TarjetaCredito tarjeta, Boolean vip) {
         if (clave != null) c.setClave(clave);
