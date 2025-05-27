@@ -57,6 +57,7 @@ public class UtilEventos {
             List<LocalDateTime> fechas, double precio, String portada) {
         Evento e = new Evento(titulo, tipo, dir, fechas, precio, portada);
         eventos.add(e);
+        guardar();
     }
     
     /** Serializar y guardar los datos de los eventos */

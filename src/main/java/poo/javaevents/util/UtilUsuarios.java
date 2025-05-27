@@ -28,7 +28,7 @@ public class UtilUsuarios {
      * @return boolean */
     public boolean iniciarSesion(String correo, String clave) {
         Cliente c = clientes.stream()
-                .filter(cliente -> cliente.getCorreo().equalsIgnoreCase(correo)).
+                .filter(cliente -> cliente.getCorreo().equals(correo)).
                         findFirst().orElse(null);
         return (c != null && c.getClave().equals(clave));
     }
@@ -50,6 +50,7 @@ public class UtilUsuarios {
         } else {
             Cliente c = new Cliente(nombre, correo, clave, telefono, direccion, tarjeta, vip);
             clientes.add(c);
+            guardar();
             return true;
         }
     }

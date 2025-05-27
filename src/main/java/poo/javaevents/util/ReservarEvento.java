@@ -17,8 +17,8 @@ public class ReservarEvento {
         UtilUsuarios utilUsuarios = new UtilUsuarios();
         
         //iniciar sesión cliente
-        String correo = "p999@mail.com";
-        String clave = "12345";
+        String correo = "ooo@mail.com";
+        String clave = "123456";
         boolean sesion = utilUsuarios.iniciarSesion(correo, clave);
         
         if (sesion) {
@@ -33,7 +33,6 @@ public class ReservarEvento {
 
             //reservar el evento
             utilReservas.realizarReserva(c, eventoElegido, LocalDateTime.of(2025,12,1,20,15), 2);
-            utilReservas.guardar();
         }
     }
 

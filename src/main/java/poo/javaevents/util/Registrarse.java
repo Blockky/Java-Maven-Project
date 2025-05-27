@@ -15,8 +15,8 @@ public class Registrarse {
         
         // Registrarse
         String nombre = "calors";
-        String correo = "p999@mail.com";
-        String clave = "12345";
+        String correo = "a@mail.com";
+        String clave = "123456";
         String telf = "999 99 99 99";
         Direccion dir = new Direccion("Sol", 8, "Alcala", 28888);
         TarjetaCredito tc = new TarjetaCredito("calors", "1111", YearMonth.of(2050,12));

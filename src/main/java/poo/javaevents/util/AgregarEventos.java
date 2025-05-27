@@ -31,7 +31,6 @@ public class AgregarEventos {
         
         if (adminAccess) {
             utilEventos.agregarEvento(titulo, tipo, dir, List.of(fecha), precio, portada);
-            utilEventos.guardar();
             System.out.println("Evento agregado");
         }
     }

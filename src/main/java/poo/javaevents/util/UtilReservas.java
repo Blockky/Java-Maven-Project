@@ -41,6 +41,7 @@ public class UtilReservas {
             reservas.add(r);
             try {
                 generarFactura(r);
+                guardar();
             } catch (IOException e) {
                 System.err.println("Error al generar la factura: " + e.getMessage());
             }
