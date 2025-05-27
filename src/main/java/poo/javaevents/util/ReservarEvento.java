@@ -17,8 +17,8 @@ public class ReservarEvento {
         UtilUsuarios utilUsuarios = new UtilUsuarios();
         
         //iniciar sesión cliente
-        String correo = "ooo@mail.com";
-        String clave = "123456";
+        String correo = "aaaa";
+        String clave = "1111";
         boolean sesion = utilUsuarios.iniciarSesion(correo, clave);
         
         if (sesion) {

@@ -1,30 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package poo.javaevents.gui;
 
 import poo.javaevents.model.Cliente;
 
-/**
- *
- * @author block
- */
+/** @author Pablo García Hernández */
 public class ClienteView extends javax.swing.JFrame {
-    private JavaEventsApp ventana;
-    private Cliente cliente;
+    
+    // Cliente que accede
+    private Cliente c;
     
     /**
      * Creates new form ClienteView
      */
-    public ClienteView(JavaEventsApp mainView, Cliente c) {
-        cliente = c;
-        ventana = mainView;
-        ventana.setVisible(false);
+    public ClienteView(Cliente cliente) {
+        c = cliente;
         initComponents();
         this.setVisible(true);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setTitle("Java Events - Inicio");
     }
 
     /**
@@ -36,23 +29,95 @@ public class ClienteView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItemModificarDatos = new javax.swing.JMenuItem();
+        jMenuItemCerrarSesion = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setText("Buscar eventos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Consultar reservas");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jMenu1.setText("Cuenta");
+
+        jMenuItemModificarDatos.setText("Modificar datos de la cuenta");
+        jMenu1.add(jMenuItemModificarDatos);
+
+        jMenuItemCerrarSesion.setText("Cerrar sesión");
+        jMenuItemCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCerrarSesionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCerrarSesion);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 313, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItemCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCerrarSesionActionPerformed
+        // Cerrar sesión
+        new JavaEventsApp();
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItemCerrarSesionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Acceder a buscador de eventos
+        new BuscadorEventos(c);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Consultar las reservas del cliente que accede
+        new ReservasCliente(c);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemCerrarSesion;
+    private javax.swing.JMenuItem jMenuItemModificarDatos;
     // End of variables declaration//GEN-END:variables
 }

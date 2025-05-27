@@ -42,7 +42,7 @@ public class UtilEventos {
      * @return reservas */
     public List<Evento> filtrarCiudad(String ciudad) {
         List<Evento> lista = eventos.stream().filter(e -> 
-                e.getTipo().equalsIgnoreCase(ciudad)).collect(Collectors.toList());
+                e.getDireccion().getCiudad().equalsIgnoreCase(ciudad)).collect(Collectors.toList());
         return lista;
     }
     

@@ -91,11 +91,16 @@ public class UtilReservas {
         String clienteFactura = r.getCliente().getCorreo().replace("@", "_");
         try {
             String carpeta = "facturas";
+            String subCarpeta = carpeta + "/user(" + clienteFactura + ")";
             File dir = new File(carpeta);
+            File subDir = new File(subCarpeta);
             if (!dir.exists()) {
                 dir.mkdir();
             }
-            String rutaFactura = carpeta + "/factura(" + clienteFactura + "_" + fechaFactura + ").txt";
+            if (!subDir.exists()) {
+                subDir.mkdir();
+            }
+            String rutaFactura = subCarpeta + "/factura(" + clienteFactura + "_" + fechaFactura + ").txt";
             PrintWriter salida = new PrintWriter(new BufferedWriter(new FileWriter(rutaFactura)));
             salida.println("================ Factura JavaEvents ================\n");
             salida.println("Fecha de la reserva: " + fechaReservaTxt + "\n");

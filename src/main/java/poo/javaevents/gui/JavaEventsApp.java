@@ -9,7 +9,7 @@ import poo.javaevents.util.UtilUsuarios;
  * @author Diego Elías Serrano Muñoz */
 public class JavaEventsApp extends javax.swing.JFrame {
     
-    //Utilidades
+    // Utilidades
     UtilUsuarios utilUsers = new UtilUsuarios();
     
     /** Creates new form NewJFrame */
@@ -18,6 +18,7 @@ public class JavaEventsApp extends javax.swing.JFrame {
         this.setVisible(true);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setTitle("Java Events");
     }
 
     /**
@@ -38,13 +39,14 @@ public class JavaEventsApp extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jFileChooser1 = new javax.swing.JFileChooser();
         jDialog6 = new javax.swing.JDialog();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        jIniciarSesion = new javax.swing.JButton();
+        jRegistro = new javax.swing.JButton();
+        jModoAdmin = new javax.swing.JButton();
+        jPassword = new javax.swing.JPasswordField();
+        jCorreo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -125,36 +127,24 @@ public class JavaEventsApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Iniciar sesión");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jIniciarSesion.setText("Iniciar sesión");
+        jIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jIniciarSesionActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Registrarse");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jRegistro.setText("Registrarse");
+        jRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jRegistroActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Acceder como admin");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jModoAdmin.setText("Acceder como admin");
+        jModoAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jModoAdminActionPerformed(evt);
             }
         });
 
@@ -162,86 +152,86 @@ public class JavaEventsApp extends javax.swing.JFrame {
 
         jLabel2.setText("Contraseña");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Bienvenido a la app de Java Events");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(135, 135, 135)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(145, 145, 145))))
+                            .addComponent(jModoAdmin)
+                            .addComponent(jRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jIniciarSesion)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jCorreo, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)))
+                        .addGap(174, 174, 174))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3)
+                .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(73, 73, 73)
-                .addComponent(jButton2)
+                .addComponent(jIniciarSesion)
+                .addGap(43, 43, 43)
+                .addComponent(jRegistro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addGap(14, 14, 14))
+                .addComponent(jModoAdmin)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegistroActionPerformed
         // Registrarse
-        RegistroView reg = new RegistroView(this);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        new RegistroView();
+        this.setVisible(false);
+    }//GEN-LAST:event_jRegistroActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jModoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModoAdminActionPerformed
+        // Acceder como admin:
+    }//GEN-LAST:event_jModoAdminActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
         // Iniciar sesion cliente
-        String correo = jTextField1.getText();
-        String clave = new String (jPasswordField1.getPassword());
+        String correo = jCorreo.getText();
+        String clave = new String (jPassword.getPassword());
         boolean sesion = utilUsers.iniciarSesion(correo, clave);
         if (sesion) {
             Cliente c = utilUsers.obtenerClaseCliente(correo);
-            ClienteView cview = new ClienteView(this, c);
+            new ClienteView(c);
+            this.setVisible(false);
         } else {
-            JOptionPane.showMessageDialog(this, "El correo o contraseña es incorrecto!", "Sesión no iniciada", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El correo o contraseña es incorrecto!", 
+                    "Sesión no iniciada", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // Campo: contraseña
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // Campo: correo del cliente
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jIniciarSesionActionPerformed
 
     /** @param args the command line arguments */
     public static void main(String args[]) {
@@ -278,9 +268,7 @@ public class JavaEventsApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTextField jCorreo;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
@@ -289,10 +277,13 @@ public class JavaEventsApp extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog6;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JFrame jFrame1;
+    private javax.swing.JButton jIniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jModoAdmin;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JButton jRegistro;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

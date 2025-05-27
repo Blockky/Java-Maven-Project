@@ -22,15 +22,16 @@ public class AgregarEventos {
         boolean adminAccess = miAdmin.loginAdmin(user, pass);
         
         //agregar eventos
-        String titulo = "Fiesta en Paterna23";
-        String tipo = "ffiesta";
-        Direccion dir = new Direccion("Alcor", 1, "Paterna", 54785);
+        String titulo = "Luka";
+        String tipo = "nose";
+        Direccion dir = new Direccion("Alcor", 1, "Madrid", 54785);
         LocalDateTime fecha = LocalDateTime.of(2025,12,1,20,15);
+        LocalDateTime fecha2 = LocalDateTime.of(2028,6,1,20,15);
         double precio = 20.0;
         String portada = "foto.jpg";
         
         if (adminAccess) {
-            utilEventos.agregarEvento(titulo, tipo, dir, List.of(fecha), precio, portada);
+            utilEventos.agregarEvento(titulo, tipo, dir, List.of(fecha, fecha2), precio, portada);
             System.out.println("Evento agregado");
         }
     }
