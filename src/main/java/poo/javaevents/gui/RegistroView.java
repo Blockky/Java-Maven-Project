@@ -7,7 +7,7 @@ import poo.javaevents.model.TarjetaCredito;
 import poo.javaevents.util.UtilUsuarios;
 
 /** @author block */
-public class Registro extends javax.swing.JFrame {
+public class RegistroView extends javax.swing.JFrame {
     private JavaEventsApp ventana;
     
     //Utilidades
@@ -16,10 +16,13 @@ public class Registro extends javax.swing.JFrame {
     /**
      * Creates new form Registro
      */
-    public Registro(JavaEventsApp mainView) {
+    public RegistroView(JavaEventsApp mainView) {
         ventana = mainView;
+        ventana.setVisible(false);
         initComponents();
         this.setVisible(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -266,33 +269,40 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextCPActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Registrarse
-        String nombre = jTextNombre.getText();
-        String correo = jTextCorreo.getText();
-        String clave = jTextClave.getText();
-        String telf = jTextTelf.getText();
-        String calle = jTextCalle.getText();
-        int numero = Integer.parseInt(jTextNumero.getText());
-        String ciudad = jTextCiudad.getText();
-        int cp = Integer.parseInt(jTextCP.getText());
-        String iban = jTextIBAN.getText();
-        int mes = Integer.parseInt(jTextMes.getText());
-        int anio = Integer.parseInt(jTextAnio.getText());
-        boolean vip = jCheckBoxVip.isSelected();
+        try {
+            // Registrarse
+            String nombre = jTextNombre.getText();
+            String correo = jTextCorreo.getText();
+            String clave = jTextClave.getText();
+            String telf = jTextTelf.getText();
+            String calle = jTextCalle.getText();
+            int numero = Integer.parseInt(jTextNumero.getText());
+            String ciudad = jTextCiudad.getText();
+            int cp = Integer.parseInt(jTextCP.getText());
+            String iban = jTextIBAN.getText();
+            int mes = Integer.parseInt(jTextMes.getText());
+            int anio = Integer.parseInt(jTextAnio.getText());
+            boolean vip = jCheckBoxVip.isSelected();
 
-        Direccion dir = new Direccion(calle, numero, ciudad, cp);
-        TarjetaCredito tc = new TarjetaCredito(nombre, iban, YearMonth.of(anio,mes));
-        
-        boolean registro = utilUsers.registrar(nombre, correo, clave, telf, dir, tc, vip);
-        if (registro) {
-            JOptionPane.showMessageDialog(this, "Usuario registrado", "Registro", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "NO SE PUDO REGISTRAR", "Sesión no iniciada", JOptionPane.INFORMATION_MESSAGE);
+            Direccion dir = new Direccion(calle, numero, ciudad, cp);
+            TarjetaCredito tc = new TarjetaCredito(nombre, iban, YearMonth.of(anio, mes));
+
+            String registro = utilUsers.registrar(nombre, correo, clave, telf, dir, tc, vip);
+            if (registro == "RegistroExito") {
+                JOptionPane.showMessageDialog(this, "Usuario registrado", "Registro", JOptionPane.INFORMATION_MESSAGE);
+            } else if (registro == "YaExiste"){
+                JOptionPane.showMessageDialog(this, "Ya existe un usuario con el correo: " + correo, "Error de registro", JOptionPane.INFORMATION_MESSAGE);
+            } else if (registro == "CamposVacios"){
+                JOptionPane.showMessageDialog(this, "No puede haber campos vacios", "Error de registro", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error en los datos: " + e.getMessage(), "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        JavaEventsApp mainview = new JavaEventsApp();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCorreoActionPerformed

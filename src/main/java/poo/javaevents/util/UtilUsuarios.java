@@ -42,18 +42,25 @@ public class UtilUsuarios {
      * @param tarjeta
      * @param vip
      * @return boolean */
-    public boolean registrar(String nombre, String correo, String clave, String telefono, 
+    public String registrar(String nombre, String correo, String clave, String telefono, 
             Direccion direccion, TarjetaCredito tarjeta, boolean vip) {
-        boolean existe = clientes.stream().anyMatch(c -> c.getCorreo().equalsIgnoreCase(correo));
-        if (existe) {
-            return false;
-        } else {
-            Cliente c = new Cliente(nombre, correo, clave, telefono, direccion, tarjeta, vip);
-            clientes.add(c);
-            guardar();
-            return true;
+            boolean existe = clientes.stream().anyMatch(c -> c.getCorreo().equalsIgnoreCase(correo));
+            if (existe) {return "YaExiste";} 
+            else {
+                if (nombre == null || nombre.trim().isEmpty() ||
+                    correo == null || correo.trim().isEmpty() ||
+                    clave == null || clave.trim().isEmpty() ||
+                    telefono == null || telefono.trim().isEmpty() ||
+                    direccion == null ||
+                    tarjeta == null) {
+                    return "CamposVacios";
+                } else {
+                    clientes.add(new Cliente(nombre, correo, clave, telefono, direccion, tarjeta, vip));
+                guardar();
+                return "RegistroExito";
+                }
+            }
         }
-    }
     
     public Cliente obtenerClaseCliente(String correo) {
         boolean existe = clientes.stream().anyMatch(c -> c.getCorreo().equalsIgnoreCase(correo));

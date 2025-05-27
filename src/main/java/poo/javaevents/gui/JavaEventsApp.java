@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package poo.javaevents.gui;
 
 import javax.swing.JOptionPane;
+
 import poo.javaevents.model.Cliente;
 import poo.javaevents.util.UtilUsuarios;
 
@@ -15,11 +12,12 @@ public class JavaEventsApp extends javax.swing.JFrame {
     //Utilidades
     UtilUsuarios utilUsers = new UtilUsuarios();
     
-    /**
-     * Creates new form NewJFrame
-     */
+    /** Creates new form NewJFrame */
     public JavaEventsApp() {
         initComponents();
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -217,7 +215,7 @@ public class JavaEventsApp extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Registrarse
-        Registro reg = new Registro(this);
+        RegistroView reg = new RegistroView(this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -245,9 +243,7 @@ public class JavaEventsApp extends javax.swing.JFrame {
         // Campo: correo del cliente
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    /** @param args the command line arguments */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
