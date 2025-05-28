@@ -1,0 +1,22 @@
+================ Factura JavaEvents ================
+
+Fecha de la reserva: 28/05/2025 - 04:15
+
+Datos del cliente:
+ - Nombre: Diego
+ - Correo: diego@gmail.com
+ - Telf: 247 89 43 45
+ - Tarjeta de crédito: 1123 5677 6777 8798
+ - Dirección: Calle Margarita, 2, Boadilla del Monte, 23345
+
+Datos del evento:
+ - Título: Ifema Japan Weekend
+ - Tipo: Feria
+ - Fecha: 19/09/2025 - 10:00
+ - Dirección: Calle Mateo, 2, Madrid, 35689
+ - Valoración: 0.0
+
+Número de entradas compradas: 1
+Importe: 37.0 €
+
+====================================================

@@ -1,0 +1,22 @@
+================ Factura JavaEvents ================
+
+Fecha de la reserva: 28/05/2025 - 04:14
+
+Datos del cliente:
+ - Nombre: Pablo García
+ - Correo: pablo@uah.es
+ - Telf: 966 44 47 00
+ - Tarjeta de crédito: 4548 8120 4940 0004
+ - Dirección: Calle Hernán Cortés, 1, Alcalá, 28888
+
+Datos del evento:
+ - Título: Última gira Hombres G
+ - Tipo: Concierto
+ - Fecha: 02/12/2025 - 20:15
+ - Dirección: Calle Góndola, 4, Paterna, 23565
+ - Valoración: 0.0
+
+Número de entradas compradas: 2
+Importe: 54.0 €
+
+====================================================
