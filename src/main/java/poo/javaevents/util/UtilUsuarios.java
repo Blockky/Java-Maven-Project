@@ -82,19 +82,34 @@ public class UtilUsuarios {
     }
     
     /** Modificar los datos de un cliente
-     * @param c
+     * @param correo
      * @param clave
      * @param telefono
      * @param direccion */
-    public void modificarDatos(Cliente c, String clave, String telefono, Direccion direccion) {
-        if (clave != null && !clave.isEmpty()) {
-            c.setClave(clave);
-        }
-        if (telefono != null && !telefono.isEmpty()) {
-            c.setTelefono(telefono);
-        }
-        if (direccion != null) {
-            c.setDireccion(direccion);
+    public void modificarDatos(String correo, String clave, String telefono, Direccion direccion) {
+        Cliente mod = null;
+        try {
+            for (Cliente c : clientes) {
+                if (c.getCorreo().equals(correo)) {
+                    mod = c;
+                    break;
+                }
+            }
+            if (mod == null) {
+                throw new Exception("Cliente con correo " + correo + " no encontrado.");
+            }
+            if (clave != null && !clave.isEmpty()) {
+                mod.setClave(clave);
+            }
+            if (telefono != null && !telefono.isEmpty()) {
+                mod.setTelefono(telefono);
+            }
+            if (direccion != null) {
+                mod.setDireccion(direccion);
+            }
+            guardar();
+        } catch (Exception e) {
+            System.err.println("Error al modificar datos: " + e.getMessage());
         }
     }
     

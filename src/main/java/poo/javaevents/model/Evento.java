@@ -3,6 +3,7 @@ package poo.javaevents.model;
 import java.util.List;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /** @author Pablo García Hernández */
 public class Evento implements Serializable {
@@ -13,7 +14,7 @@ public class Evento implements Serializable {
     private List<LocalDateTime> fechaHora;
     private double precioEntrada;
     private String portada;
-    private double valoracion;
+    private List <Integer> valoracion;
     private Direccion direccion;
 
     /** Constructor
@@ -30,8 +31,13 @@ public class Evento implements Serializable {
         this.fechaHora = fechaHora;
         this.precioEntrada = precioEntrada;
         this.portada = portada;
-        this.valoracion = 0.0;
+        this.valoracion = new ArrayList<>();
         this.direccion = direccion;
+    }
+    
+    // Hacer reseña
+    public void agregarResena(int resena) {
+        valoracion.add(resena);
     }
     
     // Getters y setters
@@ -49,12 +55,10 @@ public class Evento implements Serializable {
     /** Get the value of valoracion
      * @return the value of valoracion */
     public double getValoracion() {
-        return valoracion;
-    }
-    /** Set the value of valoracion
-     * @param valoracion new value of valoracion */
-    public void setValoracion(double valoracion) {
-        this.valoracion = valoracion;
+        if (valoracion.isEmpty()) return 0.0;
+        double suma = 0;
+        for (double r : valoracion) suma += r;
+        return suma / valoracion.size();
     }
     /** Get the value of portada
      * @return the value of portada */

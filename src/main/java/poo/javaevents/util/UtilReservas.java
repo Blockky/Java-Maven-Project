@@ -118,6 +118,7 @@ public class UtilReservas {
             salida.println(" - Dirección: Calle " + de.getCalle() + ", " + String.valueOf(de.getNumero()) + 
                     ", " + de.getCiudad() + ", " + String.valueOf(de.getCodigoPostal()));
             salida.println(" - Valoración: " + String.valueOf(e.getValoracion()) + "\n");
+            salida.println("Número de entradas compradas: " + String.valueOf(r.getNumeroEntradas()));
             salida.println("Importe: " + r.getPrecioTotal() + " €\n");
             salida.println("====================================================");
             salida.close();

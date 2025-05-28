@@ -30,6 +30,7 @@ public class ModificarDatos extends javax.swing.JFrame {
         miNum.setText(String.valueOf(c.getDireccion().getNumero()));
         miCiudad.setText(c.getDireccion().getCiudad());
         miCP.setText(String.valueOf(c.getDireccion().getCodigoPostal()));
+        jTextField1.setText(c.getCorreo());
     }
 
     /**
@@ -64,6 +65,8 @@ public class ModificarDatos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         miCP = new javax.swing.JTextField();
         jTextCP = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +139,10 @@ public class ModificarDatos extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
+
+        jLabel2.setText("Correo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,7 +153,7 @@ public class ModificarDatos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel8)
@@ -156,32 +163,39 @@ public class ModificarDatos extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(miNum)
-                            .addComponent(miContra)
-                            .addComponent(miTelf)
-                            .addComponent(miCalle)
-                            .addComponent(miCiudad, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(miCP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel13))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jTextClave, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextCiudad, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextNumero, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextCalle, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextTelf, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                    .addComponent(jTextCP))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(miNum)
+                                    .addComponent(miContra)
+                                    .addComponent(miTelf)
+                                    .addComponent(miCalle)
+                                    .addComponent(miCiudad, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(miCP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(80, 80, 80)
+                                        .addComponent(jLabel13))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(65, 65, 65)
+                                        .addComponent(jTextClave, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextCiudad, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextNumero, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextCalle, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextTelf, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                            .addComponent(jTextCP))))))))
                 .addGap(92, 92, 92))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel16)
-                .addGap(176, 176, 176))
+                .addGap(206, 206, 206))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -195,9 +209,13 @@ public class ModificarDatos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel16)
                 .addGap(32, 32, 32)
+                .addComponent(jLabel16)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel13))
@@ -236,7 +254,7 @@ public class ModificarDatos extends javax.swing.JFrame {
                     .addComponent(jTextCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(22, 22, 22))
         );
@@ -267,17 +285,18 @@ public class ModificarDatos extends javax.swing.JFrame {
                 dir = new Direccion(calle, numero, ciudad, cp);
             }
 
-            utilUsers.modificarDatos(c, clave, telf, dir);
+            utilUsers.modificarDatos(c.getCorreo(), clave, telf, dir);
             JOptionPane.showMessageDialog(this, "Datos cambiados con éxito", "Modificación hecha", 
                         JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error en los datos: " + e.getMessage(), 
-                "Error: ", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), 
+                "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new ClienteView(c);
+        utilUsers.guardar();
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -305,6 +324,7 @@ public class ModificarDatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -314,6 +334,7 @@ public class ModificarDatos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextCalle;
     private javax.swing.JTextField jTextCiudad;
     private javax.swing.JTextField jTextClave;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextNumero;
     private javax.swing.JTextField jTextTelf;
     private javax.swing.JTextField miCP;

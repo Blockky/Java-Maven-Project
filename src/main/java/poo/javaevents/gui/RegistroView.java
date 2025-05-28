@@ -84,7 +84,7 @@ public class RegistroView extends javax.swing.JFrame {
 
         jLabel10.setText("Código Postal");
 
-        jLabel11.setText("Número IBAN");
+        jLabel11.setText("Número de la tarjeta");
 
         jTextIBAN.setActionCommand("<Not Set>");
 
@@ -263,14 +263,14 @@ public class RegistroView extends javax.swing.JFrame {
             int numero = Integer.parseInt(jTextNumero.getText());
             String ciudad = jTextCiudad.getText();
             int cp = Integer.parseInt(jTextCP.getText());
-            String iban = jTextIBAN.getText();
+            String tarj = jTextIBAN.getText();
             int mes = Integer.parseInt(jTextMes.getText());
             int anio = Integer.parseInt(jTextAnio.getText());
             boolean vip = jCheckBoxVip.isSelected();
             
             // Configurar la dirección y tarjeta del usuario
             Direccion dir = new Direccion(calle, numero, ciudad, cp);
-            TarjetaCredito tc = new TarjetaCredito(nombre, iban, YearMonth.of(anio, mes));
+            TarjetaCredito tc = new TarjetaCredito(nombre, tarj, YearMonth.of(anio, mes));
 
             // Realizar registro
             String registro = utilUsers.registrar(nombre, correo, clave, telf, dir, tc, vip);

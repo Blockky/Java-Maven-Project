@@ -116,7 +116,7 @@ public class AccederAdmin extends javax.swing.JFrame {
         String clave = new String (jPassword.getPassword());
         boolean sesion = a.loginAdmin(correo, clave);
         if (sesion) {
-            new AdminView(a);
+            new AdminView();
             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "El correo o contraseña es incorrecta!", 
@@ -126,6 +126,8 @@ public class AccederAdmin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Cancelar 
+        new JavaEventsApp();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

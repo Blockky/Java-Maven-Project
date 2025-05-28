@@ -53,11 +53,45 @@ public class UtilEventos {
      * @param fechas
      * @param precio
      * @param portada */
-    public void agregarEvento(String titulo, String tipo, Direccion dir,
+    public String agregarEvento(String titulo, String tipo, Direccion dir,
             List<LocalDateTime> fechas, double precio, String portada) {
-        Evento e = new Evento(titulo, tipo, dir, fechas, precio, portada);
-        eventos.add(e);
-        guardar();
+        boolean existe = eventos.stream().anyMatch(e -> e.getTitulo().equalsIgnoreCase(titulo));
+        if (existe) {return "YaExiste";
+        } 
+        else {
+            if (titulo == null || titulo.trim().isEmpty() ||
+                    tipo == null || tipo.trim().isEmpty() ||
+                    portada == null || portada.trim().isEmpty() ||
+                    dir == null ||
+                    fechas == null) {
+                    return "CamposVacios";
+            } else {
+                Evento e = new Evento(titulo, tipo, dir, fechas, precio, portada);
+                eventos.add(e);
+                guardar();
+                return "Creado";
+            }
+        }
+    }
+    
+    public void eliminarEvento(String titulo) {
+        Evento borrar = null;
+        try {
+            for (Evento e : eventos) {
+                if (e.getTitulo().equals(titulo)) {
+                    borrar = e;
+                    break;
+                }
+            }
+            if (borrar == null) {
+                throw new Exception("Evento " + titulo + " no encontrado.");
+            } else {
+                eventos.remove(borrar);
+                guardar();
+            }
+        } catch (Exception e) {
+            System.err.println("Error al modificar datos: " + e.getMessage());
+        }
     }
     
     /** Serializar y guardar los datos de los eventos */

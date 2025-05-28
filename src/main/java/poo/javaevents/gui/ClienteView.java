@@ -54,9 +54,9 @@ public class ClienteView extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Bienvenido " + c.getNombre());
+        jLabel1.setText("Bienvenid@ " + c.getNombre());
 
-        jMenu1.setText("Cuenta");
+        jMenu1.setText("Opciones");
 
         jMenuItemModificarDatos.setText("Modificar datos de la cuenta");
         jMenuItemModificarDatos.addActionListener(new java.awt.event.ActionListener() {
